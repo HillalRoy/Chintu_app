@@ -1,0 +1,92 @@
+.background {
+    -fx-background-color: #1d1d1d;
+}
+
+.label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #222;
+}
+
+.pane{
+   -fx-padding: 10px;
+}
+.button, .toggle-button {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 14pt;
+    -shrink-animate-on-press: true;
+    -fx-background-color: #222;
+    -fx-text-fill: #ddd;
+    -fx-background-radius: 0;
+}
+.hbox .button:hover{
+    -fx-background-color: #9f9f9f;
+
+}
+.hbox .button{
+    -fx-background-color: #dfdfdf;
+    -fx-text-fill: #222;
+}
+Pane{
+    -fx-border-color:  #3332 transparent #3332 transparent;
+}
+
+.hbox{
+    -fx-spacing: 10;
+}
+
+.toggle-button:selected{
+    -fx-background-color: #089725;
+
+}
+.button{
+    -fx-background-color: #2224;
+}
+
+.chart {
+    -fx-padding: 10px;
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+
+.chart-title {
+  -fx-text-fill: #222;
+  -fx-background-color: #fff4;
+  -fx-font-size: 1.6em;
+}
+
+.axis-label {
+  -fx-text-fill: #222;
+}
+
+.chart-legend {
+    -fx-visibility: hidden;
+    -fx-background-color: #222;
+
+}
+
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+
+.chart-legend-item{
+    -fx-text-fill: #222;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-border-color:  #bdbdbd transparent #bdbdbd transparent;
+        -fx-background-color: transparent, derive(#bdbdbd,20%);
+
+}
+.split-pane:horizontal > .split-pane-divider {
+    -fx-border-color: transparent #bdbdbd transparent #bdbdbd;
+    -fx-background-color: transparent, derive(#bdbdbd,20%);
+
+}
+
+.split-pane {
+    -fx-padding: 1 0 0 0;
+}
+
+

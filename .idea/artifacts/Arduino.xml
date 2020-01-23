@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Arduino">
+    <output-path>$PROJECT_DIR$/out/artifacts/Arduino</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="landing.Main" />
+        <option name="description" value="" />
+        <option name="height" value="800" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Chintu" />
+        <option name="vendor" value="" />
+        <option name="version" value="0.1.1" />
+        <option name="width" value="1200" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Arduino.jar">
+        <element id="module-output" name="Arduino" />
+      </element>
+      <element id="directory" name="libs">
+        <element id="file-copy" path="C:/Program Files/AdoptOpenJDK/jre-11.0.4.11-hotspot/lib/jrt-fs.jar" />
+        <element id="file-copy" path="$MAVEN_REPOSITORY$/com/fazecast/jSerialComm/2.5.2/jSerialComm-2.5.2.jar" />
+        <element id="file-copy" path="$USER_HOME$/Desktop/ard libary/rxjava-2.2.12.jar" />
+      </element>
+    </root>
+  </artifact>
+</component>
