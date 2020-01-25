@@ -1,314 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedAreaChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="parent" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landing.Landing">
+<AnchorPane fx:id="parent" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landing.Landing">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
     <children>
-      <SplitPane dividerPositions="0.16" layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <SplitPane dividerPositions="0.5" layoutX="68.0" layoutY="67.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                           <children>
-                              <StackPane layoutY="1.0" prefHeight="394.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <GridPane layoutY="1.0" prefHeight="363.0" prefWidth="286.0" style="-fx-padding: 10px;" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <SplitPane dividerPositions="0.15" layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <SplitPane dividerPositions="0.5" layoutX="68.0" layoutY="67.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <StackPane layoutY="1.0" prefHeight="394.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <GridPane layoutY="1.0" prefHeight="363.0" prefWidth="286.0" style="-fx-padding: 10px;" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 
-                                      </rowConstraints>
-                                       <children>
-                                          <Pane GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <children>
-                                                <Label fx:id="humilityValue" layoutX="14.0" layoutY="26.0" text="--" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="2">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="26.0" text="Humidity" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="1">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="24.0" text="Temperature" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" style="-fx-padding: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <children>
-                                                <Label fx:id="tempValue" layoutX="14.0" layoutY="27.0" text="--" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" style="-fx-background-color: #525174;" GridPane.columnIndex="1">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="24.0" style="-fx-text-fill: #dadada;" text="Value" textFill="#e1e1e1" textOverrun="WORD_ELLIPSIS" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                             <children>
-                                                <Label fx:id="gasValue" layoutX="14.0" layoutY="26.0" text="--" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="3">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="26.0" text="Gas" />
-                                             </children>
-                                          </Pane>
-                                          <Pane style="-fx-background-color: #525174;">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="24.0" style="-fx-text-fill: #dadada;" text="Attributes" textFill="#e1e1e1" textOverrun="WORD_ELLIPSIS" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="125.0" prefHeight="51.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                             <children>
-                                                <Label fx:id="flameValue" layoutX="14.0" layoutY="26.0" text="--" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="4">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="26.0" text="Flame" />
-                                             </children>
-                                          </Pane>
-                                           <Pane layoutX="20.0" layoutY="270.0" GridPane.rowIndex="5">
-                                               <children>
-                                                   <Label layoutX="14.0" layoutY="26.0" text="Status" />
-                                               </children>
-                                           </Pane>
-                                           <Pane layoutX="20.0" layoutY="332.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                               <children>
-                                                   <Label fx:id="mode" layoutX="14.0" layoutY="26.0" text="--" />
-                                               </children>
-                                           </Pane>
-                                          <Pane layoutX="20.0" layoutY="270.0" GridPane.rowIndex="6">
-                                             <children>
-                                                <Label layoutX="14.0" layoutY="26.0" text="Status" />
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="20.0" layoutY="332.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                             <children>
-                                                <Label fx:id="curStatus" layoutX="14.0" layoutY="26.0" text="--" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </GridPane>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                           <children>
-                              <StackPane prefHeight="394.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.5" orientation="VERTICAL">
-                                       <items>
-                                          <AnchorPane>
-                                             <children>
-                                                <GridPane prefHeight="356.0" prefWidth="308.0" style="-fx-padding: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <children>
-                                                      <Pane GridPane.columnIndex="1">
-                                                         <children>
-                                                            <ToggleButton fx:id="lightsButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="OFF" GridPane.columnIndex="1" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane>
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="32.0" text="Lights" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane GridPane.rowIndex="1">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="32.0" text="Wheels" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                         <children>
-                                                            <ToggleButton fx:id="carButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="OFF" GridPane.columnIndex="1" />
-                                                         </children>
-                                                      </Pane>
-                                                   </children>
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints />
-                                                      <RowConstraints />
-            <!--                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
-            <!--                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
-                                                   </rowConstraints>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Pane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                            <children>
+                                                                <Label fx:id="humilityValue" layoutX="14.0" layoutY="26.0" text="--" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="2">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="26.0" text="Humidity" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="24.0" text="Temperature" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" style="-fx-padding: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <Label fx:id="tempValue" layoutX="14.0" layoutY="27.0" text="--" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" style="-fx-background-color: #525174;" GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="24.0" style="-fx-text-fill: #dadada;" text="Value" textFill="#e1e1e1" textOverrun="WORD_ELLIPSIS" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <children>
+                                                                <Label fx:id="gasValue" layoutX="14.0" layoutY="26.0" text="--" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="3">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="26.0" text="Gas" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane style="-fx-background-color: #525174;">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="24.0" style="-fx-text-fill: #dadada;" text="Attributes" textFill="#e1e1e1" textOverrun="WORD_ELLIPSIS" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="125.0" prefHeight="51.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                            <children>
+                                                                <Label fx:id="flameValue" layoutX="14.0" layoutY="26.0" text="--" />
+                                                            </children>
+                                                        </Pane>
+                                                        <Pane layoutX="20.0" layoutY="20.0" GridPane.rowIndex="4">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="26.0" text="Flame" />
+                                                            </children>
+                                                        </Pane>
+                                                    </children>
                                                 </GridPane>
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane prefHeight="39.0" prefWidth="341.0">
-                                             <children>
-                                                <VBox layoutX="105.0" layoutY="-4.0" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 10pt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Our members">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Hillal Kumar Roy">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Dipankar Mazumder">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Pronoy Roy">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Krishnendu Pal">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Ankit Das">
-                                                         <font>
-                                                            <Font name="Segoe UI Light" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <Pane fx:id="JISLogo" prefHeight="150.0" prefWidth="150.0" style="-fx-border-width: 0;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-                                             </children>
-                                          </AnchorPane>
-                                       </items>
-                                    </SplitPane>
-                                 </children>
-                              </StackPane>
-                           </children></AnchorPane>
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="394.0">
-               <children>
-                  <SplitPane dividerPositions="0.5" layoutY="137.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                           <children>
-                              <SplitPane dividerPositions="0.5" layoutX="133.0" layoutY="187.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <items>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <StackedAreaChart fx:id="graphValueGas" title="Gas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <xAxis>
-                                              <CategoryAxis side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis side="LEFT" />
-                                            </yAxis>
-                                          </StackedAreaChart>
-                                       </children>
-                                    </AnchorPane>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <StackedAreaChart fx:id="graphValueFlame" title="Flame" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <xAxis>
-                                                 <CategoryAxis side="BOTTOM" />
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <StackPane prefHeight="394.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                                                    <items>
+                                                        <AnchorPane>
+                                                            <children>
+                                                                <GridPane prefHeight="356.0" prefWidth="308.0" style="-fx-padding: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <children>
+                                                                        <Pane GridPane.columnIndex="1">
+                                                                            <children>
+                                                                                <ToggleButton fx:id="lightsButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="OFF" GridPane.columnIndex="1" />
+                                                                            </children>
+                                                                        </Pane>
+                                                                        <Pane>
+                                                                            <children>
+                                                                                <Label layoutX="14.0" layoutY="32.0" text="Lights" />
+                                                                            </children>
+                                                                        </Pane>
+                                                                        <Pane GridPane.rowIndex="1">
+                                                                            <children>
+                                                                                <Label layoutX="14.0" layoutY="32.0" text="Wheels" />
+                                                                            </children>
+                                                                        </Pane>
+                                                                        <Pane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                            <children>
+                                                                                <ToggleButton fx:id="carButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="OFF" GridPane.columnIndex="1" />
+                                                                            </children>
+                                                                        </Pane>
+                                                                    </children>
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints />
+                                                                        <RowConstraints />
+                                                                        <!--                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
+                                                                        <!--                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
+                                                                    </rowConstraints>
+                                                                </GridPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane prefHeight="39.0" prefWidth="341.0">
+                                                            <children>
+                                                                <VBox layoutX="105.0" layoutY="-4.0" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 10pt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Our members">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="24.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Hillal Kumar Roy">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="18.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Dipankar Mazumder">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="18.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Pronoy Roy">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="18.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Krishnendu Pal">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="18.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  - Ankit Das">
+                                                                            <font>
+                                                                                <Font name="Segoe UI Light" size="18.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                    </children>
+                                                                </VBox>
+                                                                <Pane fx:id="JISLogo" prefHeight="150.0" prefWidth="150.0" style="-fx-border-width: 0;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </StackPane>
+                                    </children></AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="394.0">
+                    <children>
+                        <SplitPane dividerPositions="0.5" layoutY="137.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.5" layoutX="133.0" layoutY="187.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <StackedAreaChart fx:id="graphValueGas" title="Gas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </StackedAreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <StackedAreaChart fx:id="graphValueFlame" title="Flame" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
 
-                                             </xAxis>
-                                             <yAxis>
-                                                <NumberAxis side="LEFT" />
-                                             </yAxis>
-                                          </StackedAreaChart>
-                                       </children>
-                                    </AnchorPane>
-                                </items>
-                              </SplitPane>
-                           </children></AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                           <children>
-                              <SplitPane dividerPositions="0.5" layoutX="163.0" layoutY="95.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <items>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <StackedAreaChart fx:id="graphValueHum" title="Humidity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <xAxis>
-                                                 <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </StackedAreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children></AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.5" layoutX="163.0" layoutY="95.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <StackedAreaChart fx:id="graphValueHum" title="Humidity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
 
-                                             </xAxis>
-                                             <yAxis>
-                                                <NumberAxis side="LEFT" />
-                                             </yAxis>
-                                          </StackedAreaChart>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                       <children>
-                                          <StackedAreaChart fx:id="graphValueTemp" title="Temperature" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <xAxis>
-                                                 <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </StackedAreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <StackedAreaChart fx:id="graphValueTemp" title="Temperature" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
 
-                                             </xAxis>
-                                             <yAxis>
-                                                <NumberAxis side="LEFT" />
-                                             </yAxis>
-                                          </StackedAreaChart>
-                                       </children>
-                                    </AnchorPane>
-                                 </items>
-                              </SplitPane>
-                           </children></AnchorPane>
-                     </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <Pane fx:id="overLay" style="-fx-background-color: #222c;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox layoutX="91.0" layoutY="125.0" prefHeight="41.0" prefWidth="438.0" style="-fx-padding: 10pt; -fx-background-color: #2226;" styleClass="hbox">
-               <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label style="-fx-text-fill: #efefef;" text="Select Port" textFill="#ebebeb" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="portRefresh" mnemonicParsing="false" style="-fx-background-color: #fff3; -fx-text-fill: #dfdfdf;" text="Refresh" AnchorPane.rightAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-                  <Label fx:id="connectionFail" prefHeight="27.0" prefWidth="426.0" style="-fx-background-color: #dd6363; -fx-text-fill: #222; -fx-padding: 10pt;" text="Connection FAIL" />
-                  <VBox fx:id="portList" prefHeight="200.0" prefWidth="100.0" styleClass="hbox" />
-               </children>
-            </VBox>
-         </children>
-      </Pane>
-   </children>
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </StackedAreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children></AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Pane fx:id="overLay" style="-fx-background-color: #222c;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutX="91.0" layoutY="125.0" prefHeight="41.0" prefWidth="438.0" style="-fx-padding: 10pt; -fx-background-color: #2226;" styleClass="hbox">
+                    <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <Label style="-fx-text-fill: #efefef;" text="Select Port" textFill="#ebebeb" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                <Button fx:id="portRefresh" mnemonicParsing="false" style="-fx-background-color: #fff3; -fx-text-fill: #dfdfdf;" text="Refresh" AnchorPane.rightAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                        <Label fx:id="connectionFail" prefHeight="27.0" prefWidth="426.0" style="-fx-background-color: #dd6363; -fx-text-fill: #222; -fx-padding: 10pt;" text="Connection FAIL" />
+                        <VBox fx:id="portList" prefHeight="200.0" prefWidth="100.0" styleClass="hbox" />
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+    </children>
 </AnchorPane>

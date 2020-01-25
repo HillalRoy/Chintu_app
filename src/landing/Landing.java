@@ -5,7 +5,6 @@ import arduino.Communication;
 import com.fazecast.jSerialComm.SerialPort;
 import data.Data;
 import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.StackedAreaChart;
@@ -42,8 +41,6 @@ public class Landing{
 
     @FXML
     private Label gasValue;
-    @FXML
-    private Label curStatus;
 
     @FXML
     private ToggleButton lightsButton;
@@ -64,8 +61,6 @@ public class Landing{
 
     @FXML
     private AnchorPane parent;
-    private Disposable statusSubscription;
-
     @FXML
     protected void initialize() {
         overLay.setVisible(true);
@@ -77,8 +72,6 @@ public class Landing{
             Communication.getInstance().updatePortList();
             setPortList();
         });
-        // TODO: unSubscribe
-        statusSubscription = Data.getInstance().statusSubject.subscribe((s) -> curStatus.setText(s));
 
         setPortList();
 
@@ -119,10 +112,11 @@ public class Landing{
         lightsButton.setOnAction(event -> {
             if(lightsButton.isSelected()){
                 lightsButton.setText("ON");
-                Communication.getInstance().send(Communication.MsgCode.LIGHT_ON);
+                Communication.getInstance().send("LON");
             }else {
                 lightsButton.setText("OFF");
-                Communication.getInstance().send(Communication.MsgCode.LIGHT_OFF);
+                Communication.getInstance().send("LOFF");
+
 
             }
         });
@@ -130,11 +124,11 @@ public class Landing{
         carButton.setOnAction(event -> {
             if(carButton.isSelected()){
                 carButton.setText("ON");
-                Communication.getInstance().send(Communication.MsgCode.CAR_ON);
+                Communication.getInstance().send("CON");
 
             }else {
                 carButton.setText("OFF");
-                Communication.getInstance().send(Communication.MsgCode.CAR_OFF);
+                Communication.getInstance().send("COFF");
 
             }
         });
@@ -187,8 +181,8 @@ public class Landing{
         graph.setAnimated(false);
         value.subscribe(d-> {
             Platform.runLater(()-> {
-                if (series.getData().size() >= 25)
-                    series.getData().remove(series.getData().size() - 25);
+                if (series.getData().size() >= 40)
+                    series.getData().remove(series.getData().size() - 40);
                 //noinspection unchecked
                 series.getData().add(new XYChart.Data(db.getTime(), d));
             });
