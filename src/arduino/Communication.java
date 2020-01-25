@@ -194,6 +194,10 @@ public class Communication {
                             case Data.AUTO:
                                 send(MsgCode.AUTO);
                                 break;
+                            case Data.MANUAL_ON:
+                                send(MsgCode.MANUAL_ON);
+                                break;
+
                         }
                     });
 
@@ -229,5 +233,6 @@ public class Communication {
         public static final char RIGHT = 'I';
         public static final char AUTO = 'J';
         public static final char MANUAL = 'K';
+        public static final char MANUAL_ON = 'L';
     }
 }

@@ -66,7 +66,7 @@ public class Main extends Application {
                 case M:
                     if (isAuto) {
 
-                        Data.getInstance().statusSubject.onNext(Data.MANUAL);
+                        Data.getInstance().statusSubject.onNext(Data.MANUAL_ON);
                         Data.getInstance().isAuto.onNext(false);
                     } else {
                         Data.getInstance().isAuto.onNext(true);

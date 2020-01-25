@@ -15,6 +15,7 @@ public class Data {
     public static final String RIGHT = "RIGHT";
     public static final String AUTO = "AUTO";
     public static final String MANUAL = "MANUAL";
+    public static final String MANUAL_ON = "MANUAL ON";
 
 
     private static Data instance = null;
