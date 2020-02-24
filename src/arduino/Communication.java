@@ -9,10 +9,10 @@ import io.reactivex.ObservableEmitter;
 
 import javax.management.timer.Timer;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
 
 public class Communication {
@@ -32,10 +32,10 @@ public class Communication {
     private Communication() {
         ports = SerialPort.getCommPorts();
         mExecutorService = Executors.newScheduledThreadPool(1);
-        mReadDataTimer = mExecutorService.scheduleAtFixedRate(() -> {
-            if (connected)
-                send(MsgCode.READ_DATA);
-        }, 1000, 2000, TimeUnit.MILLISECONDS);
+//        mReadDataTimer = mExecutorService.scheduleAtFixedRate(() -> {
+//            if (connected)
+//                send(MsgCode.READ_DATA);
+//        }, 1000, 2000, TimeUnit.MILLISECONDS);
 
     }
 
@@ -111,6 +111,50 @@ public class Communication {
 
         }
 
+
+        private long currentTime = new Date().getTime();
+        double gyroAngleX = 0;
+        double gyroAngleY = 0;
+        double yaw = 0;
+
+        private void setActValue(double accX, double accY, double accZ, double gyroX, double gyroY, double gyroZ) {
+            accX = accX / 16384.0;
+            accY = accY / 16384.0;
+            accZ = accZ / 16384.0;
+            double accAngleX = (Math.atan(accY / Math.sqrt(Math.pow(accX, 2) + Math.pow(accZ, 2))) * 180 / Math.PI) - 0.84; // AccX Error -0.84
+            double accAngleY = (Math.atan(-1 * accX / Math.sqrt(Math.pow(accY, 2) + Math.pow(accZ, 2))) * 180 / Math.PI) - 11.93;// AccY Error -11.93
+            long previousTime = currentTime;
+            currentTime = new Date().getTime();
+            double elapsedTime = ((double) currentTime - (double) previousTime) / 1000d;
+            gyroX = gyroX / 131.0;
+            gyroY = gyroY / 131.0;
+            gyroZ = gyroZ / 131.0;
+
+            // TODO: REcalibrate error
+            gyroX = gyroX - 03.52; //gyroX Error -3.52
+            gyroY = gyroY + 0.43;  //gyroX Error 0.43
+            gyroZ = gyroZ + 2.22;  //gyroX Error 2.22
+            gyroAngleX = gyroAngleX + gyroX * elapsedTime;
+            gyroAngleY = gyroAngleY + gyroY * elapsedTime;
+            yaw = yaw + gyroZ * elapsedTime;
+            double roll = 0.96 * gyroAngleX + 0.04 * accAngleX;
+            double pitch = 0.96 * gyroAngleY + 0.04 * accAngleY;
+
+            Data.getInstance().rotateX.onNext(pitch);
+            Data.getInstance().rotateY.onNext(roll);
+            Data.getInstance().rotateZ.onNext(yaw);
+            System.out.println("updated");
+
+        }
+
+        double AcX = 0;
+        double AcY = 0;
+        double AcZ = 0;
+        double GyX = 0;
+        double GyY = 0;
+        double GyZ = 0;
+
+
         private void parseCMD(String ln) {
             System.out.println("undefine -> " + ln);
 
@@ -122,7 +166,7 @@ public class Communication {
                         System.out.println("undefine -> " + split[0]);
                     continue;
                 }
-                ;
+
                 switch (split[0].trim()) {
                     case "t":
                         nanoData.tempEmitter.onNext(Double.parseDouble(split[1]));
@@ -135,6 +179,25 @@ public class Communication {
                         break;
                     case "f":
                         nanoData.flameEmitter.onNext(Double.parseDouble(split[1]));
+                        break;
+                    case "ax":
+                        AcX = Double.parseDouble(split[1]);
+                        break;
+                    case "ay":
+                        AcY = Double.parseDouble(split[1]);
+                        break;
+                    case "az":
+                        AcZ = Double.parseDouble(split[1]);
+                        break;
+                    case "gx":
+                        GyX = Double.parseDouble(split[1]);
+                        break;
+                    case "gy":
+                        GyY = Double.parseDouble(split[1]);
+                        break;
+                    case "gz":
+                        GyZ = Double.parseDouble(split[1]);
+                        setActValue(AcX, AcY, AcZ, GyX, GyY, GyX);
                         break;
                     default:
                         break;
@@ -205,7 +268,7 @@ public class Communication {
     }
 
     public void OnDestroy() {
-        mReadDataTimer.cancel(false);
+//        mReadDataTimer.cancel(false);
 
 //        mReadDataTimer.cancel(true);
         mReadDataTimer = null;

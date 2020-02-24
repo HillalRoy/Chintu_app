@@ -7,7 +7,10 @@ import data.Data;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
+import javafx.scene.*;
 import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
@@ -19,6 +22,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Box;
+import javafx.scene.shape.Cylinder;
+import javafx.scene.shape.Sphere;
+import javafx.scene.transform.Rotate;
 
 
 public class Landing{
@@ -29,6 +38,7 @@ public class Landing{
     @FXML private Pane JISLogo;
 
     @FXML private Label flameValue;
+    @FXML private AnchorPane draw3d;
     @FXML private Label connectionFail;
 
     @FXML private StackedAreaChart<?, ?> graphValueGas;
@@ -72,6 +82,11 @@ public class Landing{
         connectionFail.setVisible(false);
         connectionFail.setMinHeight(0.0d);
 
+
+
+        renderCarDrawing();
+
+
         portRefresh.setOnAction((e)->{
             portList.getChildren().remove(0, portList.getChildren().size());
             Communication.getInstance().updatePortList();
@@ -80,8 +95,101 @@ public class Landing{
         // TODO: unSubscribe
         statusSubscription = Data.getInstance().statusSubject.subscribe((s) -> curStatus.setText(s));
 
+
         setPortList();
 
+    }
+
+    private void renderCarDrawing() {
+        final PhongMaterial redMaterial = new PhongMaterial();
+        redMaterial.setSpecularColor(Color.ORANGE);
+        redMaterial.setDiffuseColor(Color.RED);
+
+        final PhongMaterial blueMaterial = new PhongMaterial();
+        blueMaterial.setDiffuseColor(Color.BLUE);
+        blueMaterial.setSpecularColor(Color.LIGHTBLUE);
+
+        final PhongMaterial greyMaterial = new PhongMaterial();
+        greyMaterial.setDiffuseColor(Color.DARKGREY);
+        greyMaterial.setSpecularColor(Color.GREY);
+
+        final Box red = new Box(200, 200, 20);
+        red.setMaterial(redMaterial);
+
+        final Sphere blue = new Sphere(200);
+        blue.setMaterial(blueMaterial);
+
+        final Cylinder grey = new Cylinder(5, 100);
+        grey.setMaterial(greyMaterial);
+
+        PerspectiveCamera camera = new PerspectiveCamera();
+        Group root = new Group();
+
+        PointLight light = new PointLight(Color.WHITE);
+        light.setTranslateX(50);
+        light.setTranslateY(-300);
+        light.setTranslateZ(-400);
+        PointLight light2 = new PointLight(Color.color(0.6, 0.3, 0.4));
+        light2.setTranslateX(400);
+        light2.setTranslateY(0);
+        light2.setTranslateZ(-400);
+
+        AmbientLight ambientLight = new AmbientLight(Color.color(0.2, 0.2, 0.2));
+//        red.setRotationAxis(new Point3D(20, 11, 5).normalize());
+        red.setTranslateX(180);
+        red.setTranslateY(180);
+        root.getChildren().addAll(ambientLight, light, light2, red);
+
+        SubScene subScene = new SubScene(root, draw3d.getWidth(), draw3d.getHeight(), true, SceneAntialiasing.BALANCED);
+
+        draw3d.layoutBoundsProperty().addListener(change -> {
+            subScene.setWidth(draw3d.getWidth());
+            subScene.setHeight(draw3d.getHeight());
+            red.setTranslateX(draw3d.getWidth() / 2);
+            red.setTranslateY(draw3d.getHeight() / 2);
+            subScene.setFill(Color.TRANSPARENT);
+            subScene.setCamera(camera);
+        });
+        Rotate xRotate;
+        Rotate yRotate;
+        Rotate zRotate;
+        final DoubleProperty angleX = new SimpleDoubleProperty(0);
+        final DoubleProperty angleZ = new SimpleDoubleProperty(0);
+        final DoubleProperty angleY = new SimpleDoubleProperty(0);
+
+//                red.setRotationAxis(new Point3D(x  % Math.PI * 2, y % Math.PI * 2, z % Math.PI * 2).normalize());
+
+        red.setTranslateY(180);
+
+
+
+        red.getTransforms().addAll(
+                xRotate = new Rotate(0, Rotate.X_AXIS),
+                yRotate = new Rotate(0, Rotate.Y_AXIS),
+                zRotate = new Rotate(0, Rotate.Z_AXIS)
+        );
+        xRotate.angleProperty().bind(angleX);
+        yRotate.angleProperty().bind(angleY);
+        zRotate.angleProperty().bind(angleZ);
+        draw3d.getChildren().add(subScene);
+        //  // Rotate the object
+        //  rotateX(radians(-pitch));
+        //  rotateZ(radians(roll));
+        //  rotateY(radians(yaw));
+
+        Data.getInstance().rotateX.subscribe(d -> {angleX.setValue(-d);
+            System.out.printf("pitch "+d);
+
+        });
+        Data.getInstance().rotateY.subscribe(d -> {angleY.setValue(d);
+            System.out.println("yaw "+d);
+
+        });
+        Data.getInstance().rotateZ.subscribe(d -> {angleZ.setValue(d);
+
+            System.out.println("roll "+d);
+        });
+//        draw3d.setClip(new Rectangle(draw3d.getWidth(), draw3d.getHeight()));
     }
 
     private void setPortList(){

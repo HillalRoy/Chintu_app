@@ -47,7 +47,7 @@ Pane{
     -fx-padding: 10px;
 }
 .chart-content {
-    -fx-padding: 30px;
+    -fx-padding: 30000px;
 }
 
 .chart-title {
@@ -64,6 +64,14 @@ Pane{
     -fx-visibility: hidden;
     -fx-background-color: #222;
 
+    -fx-margin: 50px;
+}
+
+.chart {
+    -fx-padding: 5px;
+}
+.chart-content {
+    -fx-padding: 5px;
 }
 
 .chart-legend-item-symbol{

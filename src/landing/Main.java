@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/landing/landing.fxml"));
         primaryStage.setMaximized(true);
-        primaryStage.setResizable(false);
+//        primaryStage.setResizable(false);
         primaryStage.setTitle("Chintu");
         Scene mScene = new Scene(root);
         primaryStage.setScene(mScene);

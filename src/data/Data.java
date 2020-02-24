@@ -21,6 +21,9 @@ public class Data {
     private Communication.NanoData nanoData = null;
     private Communication nano = Communication.getInstance();
     public BehaviorSubject<Boolean> isAuto = BehaviorSubject.createDefault(true);
+    public BehaviorSubject<Double> rotateX = BehaviorSubject.createDefault(0.0);
+    public BehaviorSubject<Double> rotateY = BehaviorSubject.createDefault(0.0);
+    public BehaviorSubject<Double> rotateZ = BehaviorSubject.createDefault(0.0);
 
     public BehaviorSubject<String> statusSubject = BehaviorSubject.createDefault("AUTO");
     public final float gasthres = 700;
