@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/com.fazecast:jSerialComm:2.5.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/net.sf.bluecove:bluecove:2.1.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/io.reactivex.rxjava2:rxjava:2.2.15"/>
+	<classpathentry kind="output" path="out/production/Arduino"/>
+</classpath>

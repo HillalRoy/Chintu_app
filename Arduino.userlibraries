@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="com.fazecast:jSerialComm:2.5.2">
+    <archive path="C:/Users/Hillal/.m2/repository/com/fazecast/jSerialComm/2.5.2/jSerialComm-2.5.2.jar" />
+  </library>
+  <library name="io.reactivex.rxjava2:rxjava:2.2.15">
+    <archive path="C:/Users/Hillal/IdeaProjects/Arduino/lib/rxjava-2.2.15.jar" />
+    <archive path="C:/Users/Hillal/IdeaProjects/Arduino/lib/reactive-streams-1.0.3.jar" />
+  </library>
+  <library name="net.sf.bluecove:bluecove:2.1.0">
+    <archive path="C:/Users/Hillal/IdeaProjects/Arduino/lib/bluecove-2.1.0.jar" />
+  </library>
+</eclipse-userlibraries>
+

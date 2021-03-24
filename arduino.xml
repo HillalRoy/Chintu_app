@@ -215,13 +215,13 @@
   
   <target name="compile.module.arduino.production" depends="register.custom.compilers" description="Compile module Arduino; production classes">
     <mkdir dir="${arduino.output.dir}"/>
-    <javac2 destdir="${arduino.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.arduino}/javac">
+    <javac destdir="${arduino.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.arduino}/javac">
       <compilerarg line="${compiler.args.arduino}"/>
       <bootclasspath refid="arduino.module.bootclasspath"/>
       <classpath refid="arduino.module.production.classpath"/>
       <src refid="arduino.module.sourcepath"/>
       <patternset refid="excluded.from.compilation.arduino"/>
-    </javac2>
+    </javac>
     
     <copy todir="${arduino.output.dir}">
       <fileset dir="${module.arduino.basedir}/src">
